@@ -50,10 +50,15 @@ class Modelomaquininha(models.Model):
     def __str__(self):
         return self.modelo
 
+    class Meta:
+        verbose_name = "Modelo Maquininha"
+        verbose_name_plural = "Modelos Maquininhas"
+
 
 class Maquininha(models.Model):
     estabelecimento = models.ForeignKey(Estabelecimento, on_delete=models.CASCADE)
     modelo = models.ForeignKey(Modelomaquininha, on_delete=models.CASCADE)
+    adquirente = models.ForeignKey(Adquirente, on_delete=models.CASCADE)
     n_logico = models.CharField(max_length=40, unique=True)
     terminal = models.CharField(max_length=40, unique=True)
     data_ativacao = models.DateField()
@@ -63,4 +68,5 @@ class Maquininha(models.Model):
     observacao = models.TextField(blank=True, null=True)
 
     def __str__(self):
-        return self.n_logico
+        return self.adquirente & self.terminal
+

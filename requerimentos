@@ -4,3 +4,7 @@ python 3.7.7
 https://tutorial.djangogirls.org/pt/django_admin/
 
 https://rogerdudler.github.io/git-guide/index.pt_BR.html
+
+atualizar o pycharm -> git push origin master
+
+atualizar o pythonanyhere -> git fetch && git pull
