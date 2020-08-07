@@ -68,5 +68,5 @@ class Maquininha(models.Model):
     observacao = models.TextField(blank=True, null=True)
 
     def __str__(self):
-        return self.adquirente & self.terminal
+        return self.n_logico
 
