@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Estabelecimentos
+{% endblock title %}
+
+
+{% block content %}
+<table class="table">
+    <thead>
+        <tr>
+            <th>Status</th>
+            <th>Nome</th>
+            <th>CNPJ</th>
+            <th>Cidade</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for estabelecimento in lista %}
+        <tr>
+            <td>{{ estabelecimento.status }}</td>
+            <td>{{ estabelecimento.nome }}</td>
+            <td>{{ estabelecimento.cnpj }}</td>
+            <td>{{ estabelecimento.cidade }}</td>
+
+            <td>
+                <a href="{% url 'editar_estabelecimento' pk=estabelecimento.pk %}">
+            <i class="material-icons">Editar</i>
+                </a>
+            </td>
+
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+{% endblock content %}
